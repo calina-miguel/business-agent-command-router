@@ -1,0 +1,16 @@
+{
+  "name": "Business Agent Command Router",
+  "purpose": "Route business requests to approved tools while keeping safety checks and human approvals in the workflow.",
+  "inputs": ["chat_message", "customer_id", "request_context"],
+  "steps": [
+    "Receive customer or operator request",
+    "Classify intent and confidence",
+    "Retrieve matching CRM, sheet, or database records",
+    "Choose allowed tool actions",
+    "Require approval for irreversible actions",
+    "Execute approved action",
+    "Send response and log the run"
+  ],
+  "tooling": ["n8n", "CRM", "Google Sheets", "Email", "Calendar", "Database", "Webhook APIs"],
+  "guardrails": ["approval gates", "low-confidence fallback", "permission-scoped actions", "run logs"]
+}
